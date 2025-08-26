@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planning Tournoi Bike Polo - 17 Équipes</title>
+    <title>Planning Tournoi Bike Polo - Montpellier 2025</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding-top: 70px;
+            padding-top: 80px;
         }
         
         .container {
@@ -24,7 +24,7 @@
             padding: 20px;
         }
         
-        /* Navigation sticky */
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -34,7 +34,7 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 15px 20px;
+            padding: 20px;
         }
         
         nav .nav-content {
@@ -43,11 +43,11 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
         
         nav button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
@@ -55,7 +55,7 @@
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 14px;
+            font-size: 15px;
         }
         
         nav button:hover {
@@ -65,40 +65,6 @@
         
         nav button.active {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-        
-        nav button:disabled {
-            background: #ccc !important;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        
-        .regenerate-btn {
-            background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%) !important;
-            animation: pulse 2s infinite;
-        }
-        
-        .arbitrage-btn {
-            background: linear-gradient(135deg, #ff7b00 0%, #ff8c00 100%) !important;
-        }
-        
-        .save-btn {
-            background: linear-gradient(135deg, #6f42c1 0%, #8e44ad 100%) !important;
-        }
-        
-        .lock-btn {
-            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
-        }
-        
-        .unlock-btn {
-            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%) !important;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
         
         /* Sections */
@@ -133,14 +99,15 @@
         
         h2 {
             color: #555;
-            margin: 20px 0;
+            margin: 25px 0 15px 0;
             padding-bottom: 10px;
             border-bottom: 2px solid #667eea;
         }
         
         h3 {
             color: #666;
-            margin: 15px 0;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
         }
         
         /* Tables */
@@ -165,72 +132,28 @@
         td {
             padding: 12px 15px;
             border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
         }
         
         tr:hover {
             background: #f8f9ff;
         }
         
-        /* Groupes de couleurs */
-        .groupe-matin {
-            background: #fff3cd !important;
-            color: #856404;
-            font-weight: 600;
-        }
-        
-        .groupe-milieu {
-            background: #cfe2ff !important;
-            color: #084298;
-            font-weight: 600;
-        }
-        
-        .groupe-fin {
-            background: #f8d7da !important;
-            color: #842029;
-            font-weight: 600;
-        }
-        
-        /* Validation */
-        .validation-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin: 10px 0;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #dee2e6;
-            transition: all 0.3s ease;
-        }
-        
-        .validation-item.valid {
-            background: #d4edda;
-            border-left-color: #28a745;
-        }
-        
-        .validation-item.invalid {
-            background: #f8d7da;
-            border-left-color: #dc3545;
-        }
-        
-        .validation-icon {
-            font-size: 24px;
-            margin-right: 15px;
-        }
-        
         /* Sélecteur d'équipe */
         .team-selector {
-            margin: 20px 0;
+            margin: 30px 0;
             text-align: center;
         }
         
         select {
-            padding: 12px 20px;
+            padding: 15px 25px;
             font-size: 16px;
             border: 2px solid #667eea;
             border-radius: 10px;
             background: white;
             cursor: pointer;
             transition: all 0.3s ease;
+            min-width: 300px;
         }
         
         select:focus {
@@ -244,87 +167,28 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            margin: 20px 0;
+            margin: 30px 0;
         }
         
         .stat-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
         }
         
         .stat-value {
-            font-size: 2em;
+            font-size: 2.2em;
             font-weight: bold;
             margin: 10px 0;
         }
         
         .stat-label {
             opacity: 0.9;
-            font-size: 0.9em;
-        }
-        
-        /* Liste des matchs */
-        .matches-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-            margin: 20px 0;
-            max-height: 400px;
-            overflow-y: auto;
-            padding: 10px;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-        
-        .match-item {
-            padding: 8px;
-            background: white;
-            border-radius: 8px;
-            text-align: center;
-            border: 2px solid #e0e0e0;
-            font-size: 0.85em;
-        }
-        
-        .match-item.played {
-            background: #d4edda;
-            border-color: #28a745;
-        }
-        
-        .match-item.not-played {
-            background: #f8d7da;
-            border-color: #dc3545;
-        }
-        
-        /* Matchs manquants */
-        .missing-match {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-        }
-        
-        .missing-match button {
-            margin: 5px;
-            padding: 8px 15px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .missing-match button:hover {
-            background: #0056b3;
-        }
-        
-        .missing-match button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
+            font-size: 0.95em;
+            font-weight: 500;
         }
         
         /* Arbitrage */
@@ -338,117 +202,39 @@
             background: #f0f8f0 !important;
         }
         
-        /* Contrôles */
-        .controls-section {
-            background: #f8f9fa;
-            border: 2px solid #dee2e6;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .controls-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .control-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .control-group label {
-            font-weight: bold;
-            color: #555;
-        }
-        
-        .control-group input {
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-        
-        .control-group button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .status-indicator {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 12px;
-        }
-        
-        .status-locked {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        
-        .status-unlocked {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        /* Messages d'erreur/succès/info */
-        .error-message {
-            background: #f8d7da;
-            color: #721c24;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 1px solid #f5c6cb;
-        }
-        
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 1px solid #c3e6cb;
-        }
-        
+        /* Info messages */
         .info-message {
             background: #d1ecf1;
             color: #0c5460;
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
-            margin: 20px 0;
+            margin: 25px 0;
             border: 1px solid #bee5eb;
+            font-size: 1.05em;
         }
         
-        .warning-message {
-            background: #fff3cd;
-            color: #856404;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 1px solid #ffeaa7;
+        .tournament-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                padding: 15px;
             }
             
             nav button {
-                font-size: 12px;
-                padding: 8px 15px;
+                font-size: 13px;
+                padding: 10px 15px;
             }
             
             h1 {
-                font-size: 1.8em;
+                font-size: 1.9em;
             }
             
             table {
@@ -456,15 +242,30 @@
             }
             
             th, td {
-                padding: 8px;
+                padding: 10px 8px;
             }
             
-            .controls-grid {
-                grid-template-columns: 1fr;
+            select {
+                min-width: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav .nav-content {
+                gap: 8px;
             }
             
-            .matches-list {
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            nav button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 6px;
             }
         }
     </style>
@@ -473,29 +274,32 @@
     <nav>
         <div class="nav-content">
             <button onclick="showSection('overview')" class="active">Vue d'ensemble</button>
-            <button onclick="showSection('tous-matchs')">Tous les Matchs</button>
             <button onclick="showSection('planning-jour')">Planning par Jour</button>
             <button onclick="showSection('planning-equipe')">Planning par Équipe</button>
             <button onclick="showSection('mon-equipe')">Mon Équipe</button>
-            <button onclick="showSection('finalisation')" id="finalisationBtn">🔧 Finalisation</button>
-            <button onclick="showSection('arbitrage')">👨‍⚖️ Arbitrage</button>
-            <button onclick="showSection('controles')">⚙️ Contrôles</button>
-            <button onclick="showSection('validation')">Validation</button>
-            <button onclick="regenererPlanning()" class="regenerate-btn" id="regenerateBtn">🔄 Régénérer Planning</button>
+            <button onclick="showSection('arbitrage')">Arbitrage</button>
         </div>
     </nav>
 
     <div class="container">
         <!-- Vue d'ensemble -->
         <div id="overview" class="section active">
-            <h1>🏆 Tournoi Bike Polo - 17 Équipes</h1>
+            <h1>Tournoi Bike Polo Montpellier 2025</h1>
+            
+            <div class="tournament-info">
+                <h2 style="color: white; border: none; margin-bottom: 15px;">Informations Générales</h2>
+                <p><strong>Format :</strong> Round Robin complet - Tous contre tous</p>
+                <p><strong>Dates :</strong> Jeudi, Vendredi et Samedi</p>
+                <p><strong>Horaires :</strong> 9h30 - 16h35 (Jeudi/Vendredi) | 9h30 - 14h30 (Samedi)</p>
+            </div>
+            
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-label">Équipes</div>
+                    <div class="stat-label">Équipes inscrites</div>
                     <div class="stat-value">17</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Total Matchs</div>
+                    <div class="stat-label">Total matchs</div>
                     <div class="stat-value">136</div>
                 </div>
                 <div class="stat-card">
@@ -503,83 +307,64 @@
                     <div class="stat-value">3</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-label">Durée Match</div>
+                    <div class="stat-label">Durée/match</div>
                     <div class="stat-value">25 min</div>
                 </div>
             </div>
             
-            <h2>📅 Répartition des Matchs</h2>
+            <h2>Répartition des matchs</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Jour</th>
                         <th>Créneaux</th>
-                        <th>Matchs Possibles</th>
-                        <th>Matchs/Équipe Requis</th>
+                        <th>Matchs programmés</th>
                         <th>Horaires</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Jeudi</td>
-                        <td>17</td>
-                        <td>51 (17×3)</td>
-                        <td>6</td>
+                        <td><strong>Jeudi</strong></td>
+                        <td>17 créneaux</td>
+                        <td>51 matchs</td>
                         <td>9h30 - 16h35</td>
                     </tr>
                     <tr>
-                        <td>Vendredi</td>
-                        <td>17</td>
-                        <td>51 (17×3)</td>
-                        <td>6</td>
+                        <td><strong>Vendredi</strong></td>
+                        <td>17 créneaux</td>
+                        <td>50 matchs</td>
                         <td>9h30 - 16h35</td>
                     </tr>
                     <tr>
-                        <td>Samedi</td>
-                        <td>12</td>
-                        <td>36 (12×3)</td>
-                        <td>4 (flexible si nécessaire)</td>
+                        <td><strong>Samedi</strong></td>
+                        <td>12 créneaux</td>
+                        <td>35 matchs</td>
                         <td>9h30 - 14h30</td>
-                    </tr>
-                    <tr style="font-weight: bold; background: #f0f0f0;">
-                        <td>TOTAL</td>
-                        <td>46</td>
-                        <td>138 places</td>
-                        <td>16 par équipe</td>
-                        <td>136 matchs requis</td>
                     </tr>
                 </tbody>
             </table>
             
             <div class="info-message">
-                ℹ️ <strong>Note importante :</strong> L'algorithme place les 136 matchs en respectant les contraintes.
-                En cas de matchs manquants, ils seront automatiquement placés le samedi avec dérogation à la limite de 4 matchs par équipe.
+                <strong>Note importante :</strong> Chaque équipe joue exactement 16 matchs (contre toutes les autres équipes).
+                Un temps de repos d'au moins 25 minutes est respecté entre chaque match d'une même équipe.
             </div>
-        </div>
-
-        <!-- Tous les Matchs -->
-        <div id="tous-matchs" class="section">
-            <h1>📋 Liste Complète des Matchs</h1>
-            <div id="matchs-stats"></div>
-            <h2>Tous les matchs du tournoi (136)</h2>
-            <div id="tous-matchs-content"></div>
         </div>
 
         <!-- Planning par Jour -->
         <div id="planning-jour" class="section">
-            <h1>📅 Planning par Jour</h1>
+            <h1>Planning par Jour</h1>
             <div id="planning-jour-content"></div>
         </div>
 
         <!-- Planning par Équipe -->
         <div id="planning-equipe" class="section">
-            <h1>👥 Planning par Équipe</h1>
+            <h1>Planning par Équipe</h1>
             <div id="planning-equipe-content"></div>
         </div>
 
         <!-- Mon Équipe -->
         <div id="mon-equipe" class="section">
-            <h1>⚽ Mon Équipe</h1>
+            <h1>Mon Équipe</h1>
             <div class="team-selector">
                 <label for="team-select">Sélectionnez votre équipe : </label>
                 <select id="team-select" onchange="updateMonEquipe()">
@@ -589,104 +374,21 @@
             <div id="mon-equipe-content"></div>
         </div>
 
-        <!-- Finalisation -->
-        <div id="finalisation" class="section">
-            <h1>🔧 Finalisation du Planning</h1>
-            <div class="controls-section">
-                <h3>🎯 Auto-finalisation</h3>
-                <p>Placer automatiquement tous les matchs manquants le samedi (dérogation à la règle des 4 matchs/équipe)</p>
-                <button onclick="autoFinalisationSamedi()" id="autoFinalisationBtn" style="background: #28a745; color: white; padding: 12px 25px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin: 10px 0;">
-                    🚀 Auto-finalisation Samedi
-                </button>
-            </div>
-            <div id="finalisation-content"></div>
-        </div>
-
         <!-- Arbitrage -->
         <div id="arbitrage" class="section">
-            <h1>👨‍⚖️ Arbitrage</h1>
+            <h1>Arbitrage</h1>
             <div class="info-message">
                 <strong>Règles d'arbitrage :</strong><br>
-                • Les équipes qui ne jouent pas et ne vont pas jouer le prochain match arbitrent<br>
-                • Chaque équipe arbitre environ 7±2 matchs<br>
-                • Idéalement 3-4 matchs d'affilée par équipe arbitre
+                • Les équipes qui ne jouent pas arbitrent les matchs en cours<br>
+                • Chaque équipe arbitre environ 7 matchs sur l'ensemble du tournoi<br>
+                • L'arbitrage se fait par séquences pour optimiser l'organisation
             </div>
-            <button onclick="genererArbitrage()" id="genererArbitrageBtn" style="padding: 15px 30px; background: #ff7b00; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; margin: 20px 0;">
-                🎯 Générer l'Arbitrage
-            </button>
             <div id="arbitrage-content"></div>
-        </div>
-
-        <!-- Contrôles -->
-        <div id="controles" class="section">
-            <h1>⚙️ Contrôles et Sauvegarde</h1>
-            
-            <div class="controls-section">
-                <h3>🔒 Verrouillage du Planning</h3>
-                <p>Protégez les modifications par mot de passe. <span id="lockStatus" class="status-indicator status-unlocked">🔓 DÉVERROUILLÉ</span></p>
-                
-                <div class="controls-grid">
-                    <div class="control-group">
-                        <label for="passwordInput">Mot de passe :</label>
-                        <input type="password" id="passwordInput" placeholder="Entrez le mot de passe">
-                        <button onclick="toggleLock()" id="lockToggleBtn" class="unlock-btn">🔒 Verrouiller</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="controls-section">
-                <h3>💾 Sauvegarde et Chargement</h3>
-                <p>Sauvegardez votre planning complet (matchs + arbitrage) ou chargez une planification existante.</p>
-                
-                <div class="controls-grid">
-                    <div class="control-group">
-                        <label>Sauvegarder :</label>
-                        <button onclick="sauvegarderPlanning()" class="save-btn">📥 Télécharger Planning</button>
-                    </div>
-                    
-                    <div class="control-group">
-                        <label for="fileInput">Charger un planning :</label>
-                        <input type="file" id="fileInput" accept=".json" onchange="chargerPlanning(event)">
-                    </div>
-                    
-                    <div class="control-group">
-                        <label>Actions rapides :</label>
-                        <button onclick="exporterCSV()" style="background: #17a2b8; color: white; padding: 12px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">📊 Exporter CSV</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-message">
-                <strong>💡 Conseils d'utilisation :</strong><br>
-                • Verrouillez le planning une fois finalisé pour éviter les modifications accidentelles<br>
-                • Sauvegardez régulièrement votre travail<br>
-                • Le fichier de sauvegarde contient tous les données : planning, arbitrage, et configuration
-            </div>
-        </div>
-
-        <!-- Validation -->
-        <div id="validation" class="section">
-            <h1>✅ Validation du Planning</h1>
-            <div id="validation-content"></div>
         </div>
     </div>
 
     <script>
-        // Configuration du tournoi
-        const CONFIG = {
-            nbEquipes: 17,
-            nbTerrains: 3,
-            dureeMatch: 25, // minutes
-            heureDebut: { h: 9, m: 30 },
-            jours: [
-                { nom: 'Jeudi', creneaux: 17 },
-                { nom: 'Vendredi', creneaux: 17 },
-                { nom: 'Samedi', creneaux: 12 }
-            ],
-            matchsParEquipe: [6, 6, 4] // Jeudi, Vendredi, Samedi (flexible pour samedi)
-        };
-
-        // Noms des équipes avec joueurs
+        // Données pré-chargées du tournoi
         const EQUIPES = {
             1: 'SQUADRA VENERE (Caro, Piernok, Tristan, Kostia)',
             2: 'BIG TYRE (Jenny, Ben, Guilhem, Graham)',
@@ -707,1089 +409,214 @@
             17: 'MTP 3 (Anaïs, Boris, Gohu, Étienne)'
         };
 
-        // Variables globales
-        let planning = [];
-        let tousLesMatchs = [];
-        let matchsJoues = new Set();
-        let arbitrage = [];
-        let planningVerrouille = false;
-        const MOT_DE_PASSE = "MontpellierBikePolo@26082025MegaMixte!";
+        const PLANNING_DATA = [
+            [
+                {"heure":"09h30","terrains":[{"equipe1":1,"equipe2":2,"matchId":"1-2"},{"equipe1":3,"equipe2":4,"matchId":"3-4"},{"equipe1":5,"equipe2":6,"matchId":"5-6"}]},
+                {"heure":"09h55","terrains":[{"equipe1":7,"equipe2":8,"matchId":"7-8"},{"equipe1":9,"equipe2":10,"matchId":"9-10"},{"equipe1":11,"equipe2":12,"matchId":"11-12"}]},
+                {"heure":"10h20","terrains":[{"equipe1":13,"equipe2":14,"matchId":"13-14"},{"equipe1":15,"equipe2":16,"matchId":"15-16"},{"equipe1":1,"equipe2":17,"matchId":"1-17"}]},
+                {"heure":"10h45","terrains":[{"equipe1":2,"equipe2":3,"matchId":"2-3"},{"equipe1":4,"equipe2":5,"matchId":"4-5"},{"equipe1":6,"equipe2":7,"matchId":"6-7"}]},
+                {"heure":"11h10","terrains":[{"equipe1":8,"equipe2":9,"matchId":"8-9"},{"equipe1":10,"equipe2":11,"matchId":"10-11"},{"equipe1":12,"equipe2":13,"matchId":"12-13"}]},
+                {"heure":"11h35","terrains":[{"equipe1":14,"equipe2":15,"matchId":"14-15"},{"equipe1":16,"equipe2":17,"matchId":"16-17"},{"equipe1":1,"equipe2":3,"matchId":"1-3"}]},
+                {"heure":"12h00","terrains":[{"equipe1":2,"equipe2":4,"matchId":"2-4"},{"equipe1":5,"equipe2":7,"matchId":"5-7"},{"equipe1":6,"equipe2":8,"matchId":"6-8"}]},
+                {"heure":"12h25","terrains":[{"equipe1":9,"equipe2":11,"matchId":"9-11"},{"equipe1":10,"equipe2":12,"matchId":"10-12"},{"equipe1":13,"equipe2":15,"matchId":"13-15"}]},
+                {"heure":"12h50","terrains":[{"equipe1":14,"equipe2":16,"matchId":"14-16"},{"equipe1":2,"equipe2":17,"matchId":"2-17"},{"equipe1":1,"equipe2":4,"matchId":"1-4"}]},
+                {"heure":"13h15","terrains":[{"equipe1":3,"equipe2":5,"matchId":"3-5"},{"equipe1":6,"equipe2":9,"matchId":"6-9"},{"equipe1":7,"equipe2":10,"matchId":"7-10"}]},
+                {"heure":"13h40","terrains":[{"equipe1":8,"equipe2":11,"matchId":"8-11"},{"equipe1":12,"equipe2":14,"matchId":"12-14"},{"equipe1":13,"equipe2":16,"matchId":"13-16"}]},
+                {"heure":"14h05","terrains":[{"equipe1":15,"equipe2":17,"matchId":"15-17"},{"equipe1":1,"equipe2":5,"matchId":"1-5"},{"equipe1":2,"equipe2":6,"matchId":"2-6"}]},
+                {"heure":"14h30","terrains":[{"equipe1":3,"equipe2":7,"matchId":"3-7"},{"equipe1":4,"equipe2":8,"matchId":"4-8"},{"equipe1":9,"equipe2":12,"matchId":"9-12"}]},
+                {"heure":"14h55","terrains":[{"equipe1":10,"equipe2":13,"matchId":"10-13"},{"equipe1":11,"equipe2":14,"matchId":"11-14"},{"equipe1":1,"equipe2":15,"matchId":"1-15"}]},
+                {"heure":"15h20","terrains":[{"equipe1":2,"equipe2":16,"matchId":"2-16"},{"equipe1":3,"equipe2":17,"matchId":"3-17"},{"equipe1":4,"equipe2":6,"matchId":"4-6"}]},
+                {"heure":"15h45","terrains":[{"equipe1":5,"equipe2":8,"matchId":"5-8"},{"equipe1":7,"equipe2":9,"matchId":"7-9"},{"equipe1":10,"equipe2":14,"matchId":"10-14"}]},
+                {"heure":"16h10","terrains":[{"equipe1":11,"equipe2":13,"matchId":"11-13"},{"equipe1":12,"equipe2":15,"matchId":"12-15"},{"equipe1":3,"equipe2":11,"matchId":"3-11"}]}
+            ],
+            [
+                {"heure":"09h30","terrains":[{"equipe1":1,"equipe2":16,"matchId":"1-16"},{"equipe1":4,"equipe2":17,"matchId":"4-17"},{"equipe1":2,"equipe2":5,"matchId":"2-5"}]},
+                {"heure":"09h55","terrains":[{"equipe1":3,"equipe2":6,"matchId":"3-6"},{"equipe1":7,"equipe2":11,"matchId":"7-11"},{"equipe1":8,"equipe2":10,"matchId":"8-10"}]},
+                {"heure":"10h20","terrains":[{"equipe1":9,"equipe2":13,"matchId":"9-13"},{"equipe1":12,"equipe2":16,"matchId":"12-16"},{"equipe1":14,"equipe2":17,"matchId":"14-17"}]},
+                {"heure":"10h45","terrains":[{"equipe1":2,"equipe2":15,"matchId":"2-15"},{"equipe1":1,"equipe2":6,"matchId":"1-6"},{"equipe1":3,"equipe2":8,"matchId":"3-8"}]},
+                {"heure":"11h10","terrains":[{"equipe1":4,"equipe2":7,"matchId":"4-7"},{"equipe1":5,"equipe2":9,"matchId":"5-9"},{"equipe1":10,"equipe2":16,"matchId":"10-16"}]},
+                {"heure":"11h35","terrains":[{"equipe1":11,"equipe2":15,"matchId":"11-15"},{"equipe1":12,"equipe2":17,"matchId":"12-17"},{"equipe1":1,"equipe2":13,"matchId":"1-13"}]},
+                {"heure":"12h00","terrains":[{"equipe1":2,"equipe2":14,"matchId":"2-14"},{"equipe1":3,"equipe2":9,"matchId":"3-9"},{"equipe1":4,"equipe2":10,"matchId":"4-10"}]},
+                {"heure":"12h25","terrains":[{"equipe1":5,"equipe2":11,"matchId":"5-11"},{"equipe1":6,"equipe2":12,"matchId":"6-12"},{"equipe1":7,"equipe2":13,"matchId":"7-13"}]},
+                {"heure":"12h50","terrains":[{"equipe1":8,"equipe2":14,"matchId":"8-14"},{"equipe1":3,"equipe2":15,"matchId":"3-15"},{"equipe1":4,"equipe2":16,"matchId":"4-16"}]},
+                {"heure":"13h15","terrains":[{"equipe1":5,"equipe2":17,"matchId":"5-17"},{"equipe1":1,"equipe2":7,"matchId":"1-7"},{"equipe1":2,"equipe2":9,"matchId":"2-9"}]},
+                {"heure":"13h40","terrains":[{"equipe1":6,"equipe2":10,"matchId":"6-10"},{"equipe1":8,"equipe2":12,"matchId":"8-12"},{"equipe1":11,"equipe2":16,"matchId":"11-16"}]},
+                {"heure":"14h05","terrains":[{"equipe1":13,"equipe2":17,"matchId":"13-17"},{"equipe1":1,"equipe2":14,"matchId":"1-14"},{"equipe1":4,"equipe2":15,"matchId":"4-15"}]},
+                {"heure":"14h30","terrains":[{"equipe1":2,"equipe2":7,"matchId":"2-7"},{"equipe1":3,"equipe2":10,"matchId":"3-10"},{"equipe1":5,"equipe2":12,"matchId":"5-12"}]},
+                {"heure":"14h55","terrains":[{"equipe1":6,"equipe2":11,"matchId":"6-11"},{"equipe1":8,"equipe2":13,"matchId":"8-13"},{"equipe1":9,"equipe2":14,"matchId":"9-14"}]},
+                {"heure":"15h20","terrains":[{"equipe1":5,"equipe2":15,"matchId":"5-15"},{"equipe1":3,"equipe2":16,"matchId":"3-16"},{"equipe1":7,"equipe2":17,"matchId":"7-17"}]},
+                {"heure":"15h45","terrains":[{"equipe1":1,"equipe2":8,"matchId":"1-8"},{"equipe1":2,"equipe2":10,"matchId":"2-10"},{"equipe1":4,"equipe2":9,"matchId":"4-9"}]},
+                {"heure":"16h10","terrains":[{"equipe1":6,"equipe2":13,"matchId":"6-13"},{"equipe1":7,"equipe2":16,"matchId":"7-16"},null]}
+            ],
+            [
+                {"heure":"09h30","terrains":[{"equipe1":11,"equipe2":17,"matchId":"11-17"},{"equipe1":1,"equipe2":12,"matchId":"1-12"},{"equipe1":3,"equipe2":14,"matchId":"3-14"}]},
+                {"heure":"09h55","terrains":[{"equipe1":5,"equipe2":16,"matchId":"5-16"},{"equipe1":6,"equipe2":15,"matchId":"6-15"},{"equipe1":2,"equipe2":8,"matchId":"2-8"}]},
+                {"heure":"10h20","terrains":[{"equipe1":4,"equipe2":13,"matchId":"4-13"},{"equipe1":7,"equipe2":12,"matchId":"7-12"},{"equipe1":9,"equipe2":17,"matchId":"9-17"}]},
+                {"heure":"10h45","terrains":[{"equipe1":10,"equipe2":15,"matchId":"10-15"},{"equipe1":1,"equipe2":11,"matchId":"1-11"},{"equipe1":5,"equipe2":14,"matchId":"5-14"}]},
+                {"heure":"11h10","terrains":[{"equipe1":6,"equipe2":16,"matchId":"6-16"},{"equipe1":2,"equipe2":13,"matchId":"2-13"},{"equipe1":3,"equipe2":12,"matchId":"3-12"}]},
+                {"heure":"11h35","terrains":[{"equipe1":4,"equipe2":11,"matchId":"4-11"},{"equipe1":7,"equipe2":14,"matchId":"7-14"},{"equipe1":8,"equipe2":15,"matchId":"8-15"}]},
+                {"heure":"12h00","terrains":[{"equipe1":9,"equipe2":16,"matchId":"9-16"},{"equipe1":10,"equipe2":17,"matchId":"10-17"},{"equipe1":3,"equipe2":13,"matchId":"3-13"}]},
+                {"heure":"12h25","terrains":[{"equipe1":2,"equipe2":11,"matchId":"2-11"},{"equipe1":4,"equipe2":12,"matchId":"4-12"},{"equipe1":6,"equipe2":14,"matchId":"6-14"}]},
+                {"heure":"12h50","terrains":[{"equipe1":1,"equipe2":9,"matchId":"1-9"},{"equipe1":5,"equipe2":10,"matchId":"5-10"},{"equipe1":7,"equipe2":15,"matchId":"7-15"}]},
+                {"heure":"13h15","terrains":[{"equipe1":8,"equipe2":16,"matchId":"8-16"},{"equipe1":6,"equipe2":17,"matchId":"6-17"},{"equipe1":2,"equipe2":12,"matchId":"2-12"}]},
+                {"heure":"13h40","terrains":[{"equipe1":1,"equipe2":10,"matchId":"1-10"},{"equipe1":5,"equipe2":13,"matchId":"5-13"},{"equipe1":4,"equipe2":14,"matchId":"4-14"}]},
+                {"heure":"14h05","terrains":[{"equipe1":8,"equipe2":17,"matchId":"8-17"},{"equipe1":9,"equipe2":15,"matchId":"9-15"},null]}
+            ]
+        ];
 
-        // Fonction pour obtenir le nom d'une équipe
+        const ARBITRAGE_DATA = [
+            [
+                {"heure":"09h30","arbitres":[13,14,15]},
+                {"heure":"09h55","arbitres":[2,3,4]},
+                {"heure":"10h20","arbitres":[8,9,10]},
+                {"heure":"10h45","arbitres":[1,16,17]},
+                {"heure":"11h10","arbitres":[5,6,7]},
+                {"heure":"11h35","arbitres":[11,12,9]},
+                {"heure":"12h00","arbitres":[1,3,14]},
+                {"heure":"12h25","arbitres":[5,6,7]},
+                {"heure":"12h50","arbitres":[8,11,12]},
+                {"heure":"13h15","arbitres":[2,4,15]},
+                {"heure":"13h40","arbitres":[10,4,3]},
+                {"heure":"14h05","arbitres":[13,16,10]},
+                {"heure":"14h30","arbitres":[17,16,2]},
+                {"heure":"14h55","arbitres":[5,7,8]},
+                {"heure":"15h20","arbitres":[1,11,12]},
+                {"heure":"15h45","arbitres":[6,17,1]},
+                {"heure":"16h10","arbitres":[9,14,6]}
+            ],
+            [
+                {"heure":"09h30","arbitres":[13,15,9]},
+                {"heure":"09h55","arbitres":[15,2,4]},
+                {"heure":"10h20","arbitres":[5,7,10]},
+                {"heure":"10h45","arbitres":[11,12,13]},
+                {"heure":"11h10","arbitres":[3,8,14]},
+                {"heure":"11h35","arbitres":[16,8,5]},
+                {"heure":"12h00","arbitres":[17,16,1]},
+                {"heure":"12h25","arbitres":[17,2,9]},
+                {"heure":"12h50","arbitres":[6,10,11]},
+                {"heure":"13h15","arbitres":[3,4,13]},
+                {"heure":"13h40","arbitres":[7,3,2]},
+                {"heure":"14h05","arbitres":[6,8,9]},
+                {"heure":"14h30","arbitres":[15,1,4]},
+                {"heure":"14h55","arbitres":[12,10,1]},
+                {"heure":"15h20","arbitres":[14,12,11]},
+                {"heure":"15h45","arbitres":[14,5,15]},
+                {"heure":"16h10","arbitres":[17,5]}
+            ],
+            [
+                {"heure":"09h30","arbitres":[7,13,4]},
+                {"heure":"09h55","arbitres":[3,10,11]},
+                {"heure":"10h20","arbitres":[16,2,6]},
+                {"heure":"10h45","arbitres":[7,8,9]},
+                {"heure":"11h10","arbitres":[17,9,1]},
+                {"heure":"11h35","arbitres":[12,2,5]},
+                {"heure":"12h00","arbitres":[15,7,8]},
+                {"heure":"12h25","arbitres":[13,16,3]},
+                {"heure":"12h50","arbitres":[14,13,4]},
+                {"heure":"13h15","arbitres":[11,15,3]},
+                {"heure":"13h40","arbitres":[6,12,16]},
+                {"heure":"14h05","arbitres":[10,14]}
+            ]
+        ];
+
+        const JOURS = ['Jeudi', 'Vendredi', 'Samedi'];
+
         function getNomEquipe(numero) {
             return EQUIPES[numero] || `Équipe ${numero}`;
         }
 
-        // Générer tous les matchs possibles (136 matchs)
-        function genererTousLesMatchs() {
-            tousLesMatchs = [];
-            for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                for (let j = i + 1; j <= CONFIG.nbEquipes; j++) {
-                    tousLesMatchs.push({
-                        id: `${i}-${j}`,
-                        equipe1: i,
-                        equipe2: j,
-                        joue: false,
-                        jour: null,
-                        creneau: null,
-                        terrain: null
-                    });
-                }
-            }
-            console.log(`Total de matchs générés: ${tousLesMatchs.length}`);
-            return tousLesMatchs;
-        }
-
-        // Calculer l'heure d'un créneau
-        function calculerHeure(jourIdx, creneauIdx) {
-            const totalMinutes = CONFIG.heureDebut.h * 60 + CONFIG.heureDebut.m + (creneauIdx * CONFIG.dureeMatch);
-            const heures = Math.floor(totalMinutes / 60);
-            const minutes = totalMinutes % 60;
-            return `${heures.toString().padStart(2, '0')}h${minutes.toString().padStart(2, '0')}`;
-        }
-
-        // Vérifier si une équipe peut jouer (contrainte de repos)
-        function peutJouer(equipe, jourIdx, creneauIdx, planning) {
-            // Vérifier le créneau précédent (repos obligatoire)
-            if (creneauIdx > 0) {
-                const creneauPrecedent = planning[jourIdx][creneauIdx - 1];
-                for (let terrain of creneauPrecedent.terrains) {
-                    if (terrain && (terrain.equipe1 === equipe || terrain.equipe2 === equipe)) {
-                        return false; // L'équipe a joué au créneau précédent
-                    }
-                }
-            }
-            return true;
-        }
-
-        // Vérifier le verrouillage
-        function verifierVerrouillage() {
-            return planningVerrouille;
-        }
-
-        // Mettre à jour l'état des boutons
-        function mettreAJourBoutons() {
-            const boutons = [
-                'regenerateBtn', 'finalisationBtn', 'genererArbitrageBtn', 'autoFinalisationBtn'
-            ];
-            
-            boutons.forEach(id => {
-                const btn = document.getElementById(id);
-                if (btn) {
-                    btn.disabled = planningVerrouille;
-                }
-            });
-
-            // Désactiver tous les boutons d'assignation manuelle
-            const boutonsAssignation = document.querySelectorAll('.missing-match button');
-            boutonsAssignation.forEach(btn => {
-                btn.disabled = planningVerrouille;
-            });
-        }
-
-        // Basculer le verrouillage
-        function toggleLock() {
-            const password = document.getElementById('passwordInput').value;
-            
-            if (!planningVerrouille) {
-                // Verrouiller
-                if (password === MOT_DE_PASSE) {
-                    planningVerrouille = true;
-                    document.getElementById('lockStatus').innerHTML = '🔒 VERROUILLÉ';
-                    document.getElementById('lockStatus').className = 'status-indicator status-locked';
-                    document.getElementById('lockToggleBtn').innerHTML = '🔓 Déverrouiller';
-                    document.getElementById('lockToggleBtn').className = 'lock-btn';
-                    document.getElementById('passwordInput').value = '';
-                    alert('✅ Planning verrouillé !');
-                } else {
-                    alert('❌ Mot de passe incorrect !');
-                    return;
-                }
-            } else {
-                // Déverrouiller
-                if (password === MOT_DE_PASSE) {
-                    planningVerrouille = false;
-                    document.getElementById('lockStatus').innerHTML = '🔓 DÉVERROUILLÉ';
-                    document.getElementById('lockStatus').className = 'status-indicator status-unlocked';
-                    document.getElementById('lockToggleBtn').innerHTML = '🔒 Verrouiller';
-                    document.getElementById('lockToggleBtn').className = 'unlock-btn';
-                    document.getElementById('passwordInput').value = '';
-                    alert('✅ Planning déverrouillé !');
-                } else {
-                    alert('❌ Mot de passe incorrect !');
-                    return;
-                }
-            }
-            
-            mettreAJourBoutons();
-        }
-
-        // Auto-finalisation le samedi
-        function autoFinalisationSamedi() {
-            if (verifierVerrouillage()) {
-                alert('🔒 Le planning est verrouillé !');
-                return;
-            }
-
-            const matchsManquants = tousLesMatchs.filter(m => !m.joue);
-            
-            if (matchsManquants.length === 0) {
-                alert('✅ Tous les matchs sont déjà placés !');
-                return;
-            }
-
-            let matchsPlaces = 0;
-            const jourSamediIdx = 2; // Index du samedi
-
-            // Essayer de placer tous les matchs manquants le samedi
-            for (let match of matchsManquants) {
-                let matchPlace = false;
-                
-                // Chercher un créneau libre le samedi
-                for (let creneauIdx = 0; creneauIdx < CONFIG.jours[jourSamediIdx].creneaux && !matchPlace; creneauIdx++) {
-                    for (let terrainIdx = 0; terrainIdx < CONFIG.nbTerrains && !matchPlace; terrainIdx++) {
-                        
-                        // Vérifier si le créneau est libre
-                        if (!planning[jourSamediIdx][creneauIdx].terrains[terrainIdx]) {
-                            
-                            // Vérifier le repos (on peut déroger mais on essaie de respecter quand possible)
-                            if (peutJouer(match.equipe1, jourSamediIdx, creneauIdx, planning) && 
-                                peutJouer(match.equipe2, jourSamediIdx, creneauIdx, planning)) {
-                                
-                                // Placer le match
-                                planning[jourSamediIdx][creneauIdx].terrains[terrainIdx] = {
-                                    equipe1: match.equipe1,
-                                    equipe2: match.equipe2,
-                                    matchId: match.id
-                                };
-                                
-                                match.joue = true;
-                                match.jour = CONFIG.jours[jourSamediIdx].nom;
-                                match.creneau = creneauIdx;
-                                match.terrain = terrainIdx + 1;
-                                matchsJoues.add(match.id);
-                                
-                                matchsPlaces++;
-                                matchPlace = true;
-                            }
-                        }
-                    }
-                }
-                
-                // Si on n'a pas pu placer avec le repos, placer quand même (dérogation)
-                if (!matchPlace) {
-                    for (let creneauIdx = 0; creneauIdx < CONFIG.jours[jourSamediIdx].creneaux && !matchPlace; creneauIdx++) {
-                        for (let terrainIdx = 0; terrainIdx < CONFIG.nbTerrains && !matchPlace; terrainIdx++) {
-                            
-                            if (!planning[jourSamediIdx][creneauIdx].terrains[terrainIdx]) {
-                                // Vérifier que les équipes ne jouent pas déjà à ce créneau
-                                const equipesCreneauActuel = new Set();
-                                planning[jourSamediIdx][creneauIdx].terrains.forEach(terrain => {
-                                    if (terrain) {
-                                        equipesCreneauActuel.add(terrain.equipe1);
-                                        equipesCreneauActuel.add(terrain.equipe2);
-                                    }
-                                });
-                                
-                                if (!equipesCreneauActuel.has(match.equipe1) && !equipesCreneauActuel.has(match.equipe2)) {
-                                    planning[jourSamediIdx][creneauIdx].terrains[terrainIdx] = {
-                                        equipe1: match.equipe1,
-                                        equipe2: match.equipe2,
-                                        matchId: match.id
-                                    };
-                                    
-                                    match.joue = true;
-                                    match.jour = CONFIG.jours[jourSamediIdx].nom;
-                                    match.creneau = creneauIdx;
-                                    match.terrain = terrainIdx + 1;
-                                    matchsJoues.add(match.id);
-                                    
-                                    matchsPlaces++;
-                                    matchPlace = true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            // Mettre à jour tous les affichages
-            afficherTousLesMatchs();
-            afficherPlanningParJour();
-            afficherPlanningParEquipe();
-            afficherFinalisation();
-            validerPlanning();
-            
-            if (matchsPlaces > 0) {
-                alert(`✅ ${matchsPlaces} matchs placés automatiquement le samedi !`);
-            } else {
-                alert('⚠️ Aucun match n\'a pu être placé automatiquement.');
-            }
-        }
-
-        // Algorithme de génération du planning amélioré
-        function genererPlanning() {
-            if (verifierVerrouillage()) {
-                alert('🔒 Le planning est verrouillé !');
-                return;
-            }
-
-            console.log("=== Début de la génération du planning ===");
-            
-            // Réinitialiser
-            planning = [[], [], []]; // [Jeudi, Vendredi, Samedi]
-            matchsJoues = new Set();
-            tousLesMatchs = genererTousLesMatchs();
-            arbitrage = [[], [], []]; // Réinitialiser l'arbitrage
-            
-            // Statistiques par équipe
-            let statsEquipes = {};
-            for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                statsEquipes[i] = {
-                    totalMatchs: 0,
-                    matchsParJour: [0, 0, 0],
-                    adversaires: new Set()
-                };
-            }
-            
-            // Pour chaque jour
-            for (let jourIdx = 0; jourIdx < CONFIG.jours.length; jourIdx++) {
-                const jour = CONFIG.jours[jourIdx];
-                const maxMatchsParEquipe = CONFIG.matchsParEquipe[jourIdx];
-                
-                console.log(`\n--- ${jour.nom}: ${jour.creneaux} créneaux ---`);
-                
-                // Pour chaque créneau
-                for (let creneauIdx = 0; creneauIdx < jour.creneaux; creneauIdx++) {
-                    const creneau = {
-                        heure: calculerHeure(jourIdx, creneauIdx),
-                        terrains: []
-                    };
-                    
-                    // Équipes déjà utilisées dans ce créneau
-                    let equipesUtilisees = new Set();
-                    
-                    // Pour chaque terrain
-                    for (let terrainIdx = 0; terrainIdx < CONFIG.nbTerrains; terrainIdx++) {
-                        let matchTrouve = null;
-                        let meilleurScore = -1;
-                        
-                        // Évaluer tous les matchs possibles
-                        for (let match of tousLesMatchs) {
-                            if (match.joue) continue;
-                            
-                            const e1 = match.equipe1;
-                            const e2 = match.equipe2;
-                            
-                            // Vérifications de base
-                            if (equipesUtilisees.has(e1) || equipesUtilisees.has(e2)) continue;
-                            if (statsEquipes[e1].matchsParJour[jourIdx] >= maxMatchsParEquipe) continue;
-                            if (statsEquipes[e2].matchsParJour[jourIdx] >= maxMatchsParEquipe) continue;
-                            
-                            // Vérifier le repos
-                            if (!peutJouer(e1, jourIdx, creneauIdx, planning)) continue;
-                            if (!peutJouer(e2, jourIdx, creneauIdx, planning)) continue;
-                            
-                            // Calculer un score de priorité
-                            let score = 0;
-                            
-                            // Favoriser les équipes qui ont moins joué
-                            score += (16 - statsEquipes[e1].totalMatchs) * 10;
-                            score += (16 - statsEquipes[e2].totalMatchs) * 10;
-                            
-                            // Favoriser les équipes qui sont en retard sur ce jour
-                            score += (maxMatchsParEquipe - statsEquipes[e1].matchsParJour[jourIdx]) * 5;
-                            score += (maxMatchsParEquipe - statsEquipes[e2].matchsParJour[jourIdx]) * 5;
-                            
-                            // Bonus si c'est un match nécessaire pour compléter le round robin
-                            if (!statsEquipes[e1].adversaires.has(e2)) score += 20;
-                            
-                            if (score > meilleurScore) {
-                                meilleurScore = score;
-                                matchTrouve = match;
-                            }
-                        }
-                        
-                        if (matchTrouve) {
-                            const e1 = matchTrouve.equipe1;
-                            const e2 = matchTrouve.equipe2;
-                            
-                            creneau.terrains.push({
-                                equipe1: e1,
-                                equipe2: e2,
-                                matchId: matchTrouve.id
-                            });
-                            
-                            // Mettre à jour les statistiques
-                            equipesUtilisees.add(e1);
-                            equipesUtilisees.add(e2);
-                            statsEquipes[e1].totalMatchs++;
-                            statsEquipes[e2].totalMatchs++;
-                            statsEquipes[e1].matchsParJour[jourIdx]++;
-                            statsEquipes[e2].matchsParJour[jourIdx]++;
-                            statsEquipes[e1].adversaires.add(e2);
-                            statsEquipes[e2].adversaires.add(e1);
-                            
-                            matchTrouve.joue = true;
-                            matchTrouve.jour = jour.nom;
-                            matchTrouve.creneau = creneauIdx;
-                            matchTrouve.terrain = terrainIdx + 1;
-                            matchsJoues.add(matchTrouve.id);
-                        } else {
-                            creneau.terrains.push(null);
-                        }
-                    }
-                    
-                    planning[jourIdx].push(creneau);
-                }
-            }
-            
-            // Afficher les statistiques finales
-            console.log("\n=== Statistiques finales ===");
-            console.log(`Matchs placés: ${matchsJoues.size}/136`);
-            
-            for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                const stats = statsEquipes[i];
-                console.log(`${getNomEquipe(i)}: ${stats.totalMatchs} matchs (${stats.matchsParJour.join('+')}), ${stats.adversaires.size} adversaires différents`);
-            }
-            
-            return { planning, statsEquipes };
-        }
-
-        // Afficher la finalisation
-        function afficherFinalisation() {
-            const matchsManquants = tousLesMatchs.filter(m => !m.joue);
-            let html = '';
-            
-            if (matchsManquants.length === 0) {
-                html += '<div class="success-message">🎉 Tous les matchs sont planifiés ! Le planning est complet.</div>';
-            } else {
-                html += `<div class="warning-message">⚠️ ${matchsManquants.length} matchs ne sont pas encore planifiés. Utilisez l'auto-finalisation ou assignez-les manuellement.</div>`;
-                html += '<h2>Matchs manquants - Assignation manuelle</h2>';
-                
-                matchsManquants.forEach(match => {
-                    html += '<div class="missing-match">';
-                    html += `<strong>${getNomEquipe(match.equipe1)} vs ${getNomEquipe(match.equipe2)}</strong><br>`;
-                    html += 'Assigner à : ';
-                    
-                    // Générer les options de créneaux disponibles
-                    let creneauxDisponibles = false;
-                    for (let jourIdx = 0; jourIdx < CONFIG.jours.length; jourIdx++) {
-                        for (let creneauIdx = 0; creneauIdx < CONFIG.jours[jourIdx].creneaux; creneauIdx++) {
-                            for (let terrainIdx = 0; terrainIdx < CONFIG.nbTerrains; terrainIdx++) {
-                                if (!planning[jourIdx][creneauIdx].terrains[terrainIdx]) {
-                                    // Vérifier si les équipes peuvent jouer à ce créneau
-                                    if (peutJouer(match.equipe1, jourIdx, creneauIdx, planning) && 
-                                        peutJouer(match.equipe2, jourIdx, creneauIdx, planning)) {
-                                        const heure = calculerHeure(jourIdx, creneauIdx);
-                                        html += `<button onclick="assignerMatch('${match.id}', ${jourIdx}, ${creneauIdx}, ${terrainIdx})" ${planningVerrouille ? 'disabled' : ''}>
-                                            ${CONFIG.jours[jourIdx].nom} ${heure} T${terrainIdx + 1}
-                                        </button>`;
-                                        creneauxDisponibles = true;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    
-                    if (!creneauxDisponibles) {
-                        html += '<span style="color: #dc3545; font-style: italic;">Aucun créneau disponible avec repos</span>';
-                    }
-                    
-                    html += '</div>';
-                });
-            }
-            
-            document.getElementById('finalisation-content').innerHTML = html;
-        }
-
-        // Assigner un match manuellement
-        function assignerMatch(matchId, jourIdx, creneauIdx, terrainIdx) {
-            if (verifierVerrouillage()) {
-                alert('🔒 Le planning est verrouillé !');
-                return;
-            }
-
-            const match = tousLesMatchs.find(m => m.id === matchId);
-            if (!match || match.joue) return;
-            
-            // Vérifier la disponibilité du créneau
-            if (planning[jourIdx][creneauIdx].terrains[terrainIdx]) {
-                alert('Ce créneau est déjà occupé !');
-                return;
-            }
-            
-            // Assigner le match
-            planning[jourIdx][creneauIdx].terrains[terrainIdx] = {
-                equipe1: match.equipe1,
-                equipe2: match.equipe2,
-                matchId: match.id
-            };
-            
-            match.joue = true;
-            match.jour = CONFIG.jours[jourIdx].nom;
-            match.creneau = creneauIdx;
-            match.terrain = terrainIdx + 1;
-            matchsJoues.add(match.id);
-            
-            // Mettre à jour les affichages
-            afficherTousLesMatchs();
-            afficherPlanningParJour();
-            afficherPlanningParEquipe();
-            afficherFinalisation();
-            validerPlanning();
-            
-            alert(`Match ${getNomEquipe(match.equipe1)} vs ${getNomEquipe(match.equipe2)} assigné avec succès !`);
-        }
-
-        // Générer l'arbitrage
-        function genererArbitrage() {
-            if (verifierVerrouillage()) {
-                alert('🔒 Le planning est verrouillé !');
-                return;
-            }
-
-            console.log("=== Génération de l'arbitrage ===");
-            
-            // Réinitialiser l'arbitrage
-            arbitrage = [[], [], []];
-            let statsArbitrage = {};
-            
-            for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                statsArbitrage[i] = {
-                    totalArbitrages: 0,
-                    dernierArbitrage: -10, // Pour gérer les séquences
-                    sequenceActuelle: 0
-                };
-            }
-            
-            // Pour chaque jour
-            for (let jourIdx = 0; jourIdx < CONFIG.jours.length; jourIdx++) {
-                const jour = CONFIG.jours[jourIdx];
-                
-                // Pour chaque créneau
-                for (let creneauIdx = 0; creneauIdx < jour.creneaux; creneauIdx++) {
-                    const creneauPlanning = planning[jourIdx][creneauIdx];
-                    const creneauArbitrage = { heure: creneauPlanning.heure, arbitres: [] };
-                    
-                    // Équipes qui jouent à ce créneau
-                    let equipesQuiJouent = new Set();
-                    creneauPlanning.terrains.forEach(terrain => {
-                        if (terrain) {
-                            equipesQuiJouent.add(terrain.equipe1);
-                            equipesQuiJouent.add(terrain.equipe2);
-                        }
-                    });
-                    
-                    // Équipes qui jouent au créneau suivant
-                    let equipesQuiJouentProchain = new Set();
-                    if (creneauIdx + 1 < jour.creneaux) {
-                        const creneauSuivant = planning[jourIdx][creneauIdx + 1];
-                        creneauSuivant.terrains.forEach(terrain => {
-                            if (terrain) {
-                                equipesQuiJouentProchain.add(terrain.equipe1);
-                                equipesQuiJouentProchain.add(terrain.equipe2);
-                            }
-                        });
-                    }
-                    
-                    // Équipes disponibles pour arbitrer
-                    let equipesDisponibles = [];
-                    for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                        if (!equipesQuiJouent.has(i) && !equipesQuiJouentProchain.has(i)) {
-                            equipesDisponibles.push(i);
-                        }
-                    }
-                    
-                    // Assigner les arbitres pour chaque terrain avec match
-                    let nbMatchs = creneauPlanning.terrains.filter(t => t !== null).length;
-                    for (let terrainIdx = 0; terrainIdx < nbMatchs; terrainIdx++) {
-                        let arbitreChoisi = null;
-                        let meilleurScore = -1;
-                        
-                        for (let equipe of equipesDisponibles) {
-                            if (creneauArbitrage.arbitres.includes(equipe)) continue; // Déjà arbitre ce créneau
-                            
-                            let score = 0;
-                            
-                            // Favoriser les équipes qui ont moins arbitré
-                            score += (8 - statsArbitrage[equipe].totalArbitrages) * 10;
-                            
-                            // Favoriser la continuité si l'équipe arbitrait récemment
-                            if (statsArbitrage[equipe].dernierArbitrage === creneauIdx - 1) {
-                                score += 5; // Bonus pour continuer une séquence
-                                if (statsArbitrage[equipe].sequenceActuelle < 4) {
-                                    score += 3; // Bonus supplémentaire si la séquence n'est pas trop longue
-                                }
-                            }
-                            
-                            // Pénalité si la séquence devient trop longue
-                            if (statsArbitrage[equipe].sequenceActuelle >= 4) {
-                                score -= 10;
-                            }
-                            
-                            if (score > meilleurScore) {
-                                meilleurScore = score;
-                                arbitreChoisi = equipe;
-                            }
-                        }
-                        
-                        if (arbitreChoisi) {
-                            creneauArbitrage.arbitres.push(arbitreChoisi);
-                            
-                            // Mettre à jour les stats
-                            statsArbitrage[arbitreChoisi].totalArbitrages++;
-                            
-                            if (statsArbitrage[arbitreChoisi].dernierArbitrage === creneauIdx - 1) {
-                                statsArbitrage[arbitreChoisi].sequenceActuelle++;
-                            } else {
-                                statsArbitrage[arbitreChoisi].sequenceActuelle = 1;
-                            }
-                            statsArbitrage[arbitreChoisi].dernierArbitrage = creneauIdx;
-                            
-                            // Retirer de la liste des disponibles pour ce créneau
-                            equipesDisponibles = equipesDisponibles.filter(e => e !== arbitreChoisi);
-                        }
-                    }
-                    
-                    arbitrage[jourIdx].push(creneauArbitrage);
-                }
-            }
-            
-            console.log("=== Statistiques d'arbitrage ===");
-            for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                console.log(`${getNomEquipe(i)}: ${statsArbitrage[i].totalArbitrages} arbitrages`);
-            }
-            
-            afficherArbitrage();
-        }
-
-        // Afficher l'arbitrage
-        function afficherArbitrage() {
-            let html = '';
-            
-            // Stats globales
-            let statsArbitrage = {};
-            for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                statsArbitrage[i] = 0;
-            }
-            
-            arbitrage.forEach(jour => {
-                jour.forEach(creneau => {
-                    creneau.arbitres.forEach(arbitre => {
-                        statsArbitrage[arbitre]++;
-                    });
-                });
-            });
-            
-            html += '<h2>📊 Statistiques d\'arbitrage</h2>';
-            html += '<div class="stats-grid">';
-            
-            let totalArbitrages = Object.values(statsArbitrage).reduce((a, b) => a + b, 0);
-            let moyenne = totalArbitrages / CONFIG.nbEquipes;
-            let min = Math.min(...Object.values(statsArbitrage));
-            let max = Math.max(...Object.values(statsArbitrage));
-            
-            html += `<div class="stat-card"><div class="stat-label">Total Arbitrages</div><div class="stat-value">${totalArbitrages}</div></div>`;
-            html += `<div class="stat-card"><div class="stat-label">Moyenne/Équipe</div><div class="stat-value">${moyenne.toFixed(1)}</div></div>`;
-            html += `<div class="stat-card"><div class="stat-label">Min - Max</div><div class="stat-value">${min} - ${max}</div></div>`;
-            html += '</div>';
-            
-            // Détail par équipe
-            html += '<h3>Répartition par équipe</h3>';
-            html += '<table><thead><tr><th>Équipe</th><th>Nb Arbitrages</th><th>Écart à la moyenne</th></tr></thead><tbody>';
-            
-            for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                const nb = statsArbitrage[i];
-                const ecart = nb - moyenne;
-                const couleur = Math.abs(ecart) <= 1 ? '#d4edda' : (ecart > 1 ? '#f8d7da' : '#fff3cd');
-                
-                html += `<tr style="background: ${couleur}">`;
-                html += `<td>${getNomEquipe(i)}</td>`;
-                html += `<td>${nb}</td>`;
-                html += `<td>${ecart > 0 ? '+' : ''}${ecart.toFixed(1)}</td>`;
-                html += '</tr>';
-            }
-            html += '</tbody></table>';
-            
-            // Planning d'arbitrage par jour
-            for (let jourIdx = 0; jourIdx < CONFIG.jours.length; jourIdx++) {
-                const jour = CONFIG.jours[jourIdx];
-                html += `<h2>${jour.nom} - Arbitrage</h2>`;
-                
-                html += '<table>';
-                html += '<thead><tr><th>Heure</th><th>Terrain 1</th><th>Terrain 2</th><th>Terrain 3</th><th>Arbitres</th></tr></thead>';
-                html += '<tbody>';
-                
-                planning[jourIdx].forEach((creneau, creneauIdx) => {
-                    html += '<tr>';
-                    html += `<td><strong>${creneau.heure}</strong></td>`;
-                    
-                    // Afficher les matchs
-                    creneau.terrains.forEach(terrain => {
-                        if (terrain) {
-                            html += `<td style="font-size: 0.8em;">${getNomEquipe(terrain.equipe1)} vs ${getNomEquipe(terrain.equipe2)}</td>`;
-                        } else {
-                            html += '<td style="color: #999;">-</td>';
-                        }
-                    });
-                    
-                    // Afficher les arbitres
-                    const arbitresCreneaux = arbitrage[jourIdx] && arbitrage[jourIdx][creneauIdx];
-                    if (arbitresCreneaux && arbitresCreneaux.arbitres.length > 0) {
-                        const nomsArbitres = arbitresCreneaux.arbitres.map(a => getNomEquipe(a)).join(', ');
-                        html += `<td class="arbitre-cell" style="font-size: 0.8em;">${nomsArbitres}</td>`;
-                    } else {
-                        html += '<td style="color: #999;">Aucun arbitre</td>';
-                    }
-                    
-                    html += '</tr>';
-                });
-                
-                html += '</tbody></table>';
-            }
-            
-            document.getElementById('arbitrage-content').innerHTML = html;
-        }
-
-        // Obtenir les matchs d'arbitrage pour une équipe
-        function getArbitragesEquipe(equipe) {
-            const arbitragesEquipe = [];
-            
-            for (let jourIdx = 0; jourIdx < arbitrage.length; jourIdx++) {
-                const jour = CONFIG.jours[jourIdx].nom;
-                
-                arbitrage[jourIdx].forEach((creneau, creneauIdx) => {
-                    if (creneau.arbitres.includes(equipe)) {
-                        arbitragesEquipe.push({
-                            jour: jour,
-                            heure: creneau.heure,
-                            creneauIdx: creneauIdx
-                        });
-                    }
-                });
-            }
-            
-            return arbitragesEquipe;
-        }
-
-        // Sauvegarder le planning
-        function sauvegarderPlanning() {
-            const donnees = {
-                version: "1.0",
-                timestamp: new Date().toISOString(),
-                config: CONFIG,
-                equipes: EQUIPES,
-                planning: planning,
-                tousLesMatchs: tousLesMatchs,
-                matchsJoues: Array.from(matchsJoues),
-                arbitrage: arbitrage
-            };
-
-            const blob = new Blob([JSON.stringify(donnees, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `tournoi-bike-polo-${new Date().toISOString().split('T')[0]}.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            alert('✅ Planning sauvegardé !');
-        }
-
-        // Charger un planning
-        function chargerPlanning(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const donnees = JSON.parse(e.target.result);
-                    
-                    // Vérifier la validité
-                    if (!donnees.version || !donnees.planning || !donnees.tousLesMatchs) {
-                        throw new Error("Format de fichier invalide");
-                    }
-                    
-                    // Charger les données
-                    planning = donnees.planning;
-                    tousLesMatchs = donnees.tousLesMatchs;
-                    matchsJoues = new Set(donnees.matchsJoues || []);
-                    arbitrage = donnees.arbitrage || [[], [], []];
-                    
-                    // Mettre à jour tous les affichages
-                    afficherTousLesMatchs();
-                    afficherPlanningParJour();
-                    afficherPlanningParEquipe();
-                    afficherFinalisation();
-                    afficherArbitrage();
-                    validerPlanning();
-                    
-                    // Réinitialiser la sélection d'équipe
-                    document.getElementById('team-select').value = '';
-                    document.getElementById('mon-equipe-content').innerHTML = '<p>Veuillez sélectionner une équipe.</p>';
-                    
-                    alert('✅ Planning chargé avec succès !');
-                    
-                } catch (error) {
-                    alert('❌ Erreur lors du chargement du fichier : ' + error.message);
-                }
-            };
-            
-            reader.readAsText(file);
-            event.target.value = ''; // Réinitialiser l'input
-        }
-
-        // Exporter en CSV
-        function exporterCSV() {
-            let csv = 'Jour,Heure,Terrain,Equipe1,Equipe2,Arbitres\n';
-            
-            for (let jourIdx = 0; jourIdx < CONFIG.jours.length; jourIdx++) {
-                const jour = CONFIG.jours[jourIdx].nom;
-                
-                planning[jourIdx].forEach((creneau, creneauIdx) => {
-                    const arbitresCreneaux = arbitrage[jourIdx] && arbitrage[jourIdx][creneauIdx] ? 
-                        arbitrage[jourIdx][creneauIdx].arbitres.map(a => getNomEquipe(a)).join(';') : '';
-                    
-                    creneau.terrains.forEach((terrain, terrainIdx) => {
-                        if (terrain) {
-                            csv += `${jour},${creneau.heure},${terrainIdx + 1},"${getNomEquipe(terrain.equipe1)}","${getNomEquipe(terrain.equipe2)}","${arbitresCreneaux}"\n`;
-                        }
-                    });
-                });
-            }
-            
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = URL.createObjectURL(blob);
-            
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `tournoi-bike-polo-${new Date().toISOString().split('T')[0]}.csv`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            alert('✅ Planning exporté en CSV !');
-        }
-
-        // Afficher tous les matchs
-        function afficherTousLesMatchs() {
-            let html = '';
-            
-            // Statistiques
-            const matchsJouesCount = tousLesMatchs.filter(m => m.joue).length;
-            const pourcentage = Math.round((matchsJouesCount / 136) * 100);
-            
-            html += '<div class="stats-grid">';
-            html += `<div class="stat-card ${matchsJouesCount === 136 ? 'style="background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);"' : ''}">`;
-            html += '<div class="stat-label">Matchs Placés</div>';
-            html += `<div class="stat-value">${matchsJouesCount}/136</div>`;
-            html += `<div class="stat-label">${pourcentage}%</div>`;
-            html += '</div>';
-            html += '</div>';
-            
-            if (matchsJouesCount < 136) {
-                html += '<div class="error-message">⚠️ Attention : Tous les matchs n\'ont pas pu être placés. Vérifiez la section "Finalisation".</div>';
-            }
-            
-            // Liste des matchs
-            html += '<div class="matches-list">';
-            tousLesMatchs.forEach(match => {
-                const status = match.joue ? 'played' : 'not-played';
-                const statusText = match.joue ? '✅' : '❌';
-                html += `<div class="match-item ${status}">`;
-                html += `${statusText} ${getNomEquipe(match.equipe1)} vs ${getNomEquipe(match.equipe2)}`;
-                if (match.joue) {
-                    html += `<br><small>${match.jour} - ${match.creneau + 1}° - T${match.terrain}</small>`;
-                }
-                html += '</div>';
-            });
-            html += '</div>';
-            
-            document.getElementById('tous-matchs-content').innerHTML = html;
-        }
-
-        // Afficher le planning par jour
         function afficherPlanningParJour() {
             let html = '';
             
-            for (let jourIdx = 0; jourIdx < CONFIG.jours.length; jourIdx++) {
-                const jour = CONFIG.jours[jourIdx];
-                html += `<h2>${jour.nom}</h2>`;
-                
-                const matchsJour = planning[jourIdx].reduce((acc, creneau) => {
+            PLANNING_DATA.forEach((jour, jourIdx) => {
+                const nomJour = JOURS[jourIdx];
+                const matchsJour = jour.reduce((acc, creneau) => {
                     return acc + creneau.terrains.filter(t => t !== null).length;
                 }, 0);
                 
-                html += `<p>Matchs programmés : ${matchsJour} / ${jour.creneaux * 3} créneaux disponibles</p>`;
+                html += `<h2>${nomJour} - ${matchsJour} matchs</h2>`;
+                html += '<table><thead><tr><th>Heure</th><th>Terrain 1</th><th>Terrain 2</th><th>Terrain 3</th></tr></thead><tbody>';
                 
-                html += '<table>';
-                html += '<thead><tr><th>Heure</th><th>Terrain 1</th><th>Terrain 2</th><th>Terrain 3</th></tr></thead>';
-                html += '<tbody>';
-                
-                planning[jourIdx].forEach(creneau => {
+                jour.forEach(creneau => {
                     html += '<tr>';
                     html += `<td><strong>${creneau.heure}</strong></td>`;
                     
-                    creneau.terrains.forEach(terrain => {
+                    for (let i = 0; i < 3; i++) {
+                        const terrain = creneau.terrains[i];
                         if (terrain) {
-                            html += `<td style="font-size: 0.85em;">${getNomEquipe(terrain.equipe1)} vs ${getNomEquipe(terrain.equipe2)}</td>`;
+                            html += `<td>${getNomEquipe(terrain.equipe1)}<br><strong>vs</strong><br>${getNomEquipe(terrain.equipe2)}</td>`;
                         } else {
-                            html += '<td style="color: #999;">-</td>';
+                            html += '<td style="color: #999; text-align: center;">-</td>';
                         }
-                    });
+                    }
                     
                     html += '</tr>';
                 });
                 
                 html += '</tbody></table>';
-            }
+            });
             
             document.getElementById('planning-jour-content').innerHTML = html;
         }
 
-        // Afficher le planning par équipe
+        function getMatchsEquipe(numeroEquipe) {
+            const matchs = [];
+            
+            PLANNING_DATA.forEach((jour, jourIdx) => {
+                const nomJour = JOURS[jourIdx];
+                
+                jour.forEach(creneau => {
+                    creneau.terrains.forEach((terrain, terrainIdx) => {
+                        if (terrain && (terrain.equipe1 === numeroEquipe || terrain.equipe2 === numeroEquipe)) {
+                            const adversaire = terrain.equipe1 === numeroEquipe ? terrain.equipe2 : terrain.equipe1;
+                            matchs.push({
+                                jour: nomJour,
+                                heure: creneau.heure,
+                                adversaire: adversaire,
+                                terrain: terrainIdx + 1
+                            });
+                        }
+                    });
+                });
+            });
+            
+            return matchs;
+        }
+
         function afficherPlanningParEquipe() {
             let html = '';
             
-            for (let equipe = 1; equipe <= CONFIG.nbEquipes; equipe++) {
+            for (let equipe = 1; equipe <= 17; equipe++) {
                 const matchsEquipe = getMatchsEquipe(equipe);
                 
-                html += `<h3>${getNomEquipe(equipe)} (${matchsEquipe.length} matchs)</h3>`;
+                html += `<h3>${getNomEquipe(equipe)}</h3>`;
+                html += `<p style="margin-bottom: 15px; color: #666;"><strong>${matchsEquipe.length} matchs programmés</strong></p>`;
                 
-                if (matchsEquipe.length === 0) {
-                    html += '<p style="color: red;">⚠️ Aucun match programmé</p>';
-                } else {
-                    html += '<table>';
-                    html += '<thead><tr><th>N°</th><th>Jour</th><th>Heure</th><th>Adversaire</th><th>Terrain</th></tr></thead>';
-                    html += '<tbody>';
+                if (matchsEquipe.length > 0) {
+                    html += '<table><thead><tr><th>Match</th><th>Jour</th><th>Heure</th><th>Adversaire</th><th>Terrain</th></tr></thead><tbody>';
                     
                     matchsEquipe.forEach((match, idx) => {
                         html += '<tr>';
-                        html += `<td>${idx + 1}</td>`;
+                        html += `<td><strong>${idx + 1}</strong></td>`;
                         html += `<td>${match.jour}</td>`;
-                        html += `<td>${match.heure}</td>`;
-                        html += `<td style="font-size: 0.85em;">${getNomEquipe(match.adversaire)}</td>`;
+                        html += `<td><strong>${match.heure}</strong></td>`;
+                        html += `<td>${getNomEquipe(match.adversaire)}</td>`;
                         html += `<td>Terrain ${match.terrain}</td>`;
                         html += '</tr>';
                     });
                     
                     html += '</tbody></table>';
-                    
-                    // Vérifier les adversaires manquants
-                    const adversairesJoues = new Set(matchsEquipe.map(m => m.adversaire));
-                    const adversairesManquants = [];
-                    for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                        if (i !== equipe && !adversairesJoues.has(i)) {
-                            adversairesManquants.push(i);
-                        }
-                    }
-                    
-                    if (adversairesManquants.length > 0) {
-                        html += `<p style="color: orange; font-size: 0.85em;">⚠️ Adversaires manquants : ${adversairesManquants.map(a => getNomEquipe(a)).join(', ')}</p>`;
-                    }
                 }
             }
             
             document.getElementById('planning-equipe-content').innerHTML = html;
         }
 
-        // Obtenir les matchs d'une équipe
-        function getMatchsEquipe(equipe) {
-            const matchsEquipe = [];
-            
-            for (let jourIdx = 0; jourIdx < planning.length; jourIdx++) {
-                const jour = CONFIG.jours[jourIdx].nom;
-                
-                planning[jourIdx].forEach((creneau, creneauIdx) => {
-                    creneau.terrains.forEach((terrain, terrainIdx) => {
-                        if (terrain) {
-                            if (terrain.equipe1 === equipe || terrain.equipe2 === equipe) {
-                                const adversaire = terrain.equipe1 === equipe ? terrain.equipe2 : terrain.equipe1;
-                                matchsEquipe.push({
-                                    jour: jour,
-                                    heure: creneau.heure,
-                                    adversaire: adversaire,
-                                    terrain: terrainIdx + 1
-                                });
-                            }
-                        }
-                    });
-                });
-            }
-            
-            return matchsEquipe;
-        }
-
-        // Valider le planning
-        function validerPlanning() {
-            let html = '';
-            let toutValide = true;
-            
-            // Vérifier le nombre total de matchs
-            const totalMatchsJoues = matchsJoues.size;
-            const totalMatchsAttendu = 136;
-            
-            html += '<h2>Validation Globale</h2>';
-            
-            if (totalMatchsJoues === totalMatchsAttendu) {
-                html += '<div class="validation-item valid">';
-                html += '<span class="validation-icon">✅</span>';
-                html += `<span>Nombre total de matchs : ${totalMatchsJoues}/${totalMatchsAttendu}</span>`;
-                html += '</div>';
-            } else {
-                html += '<div class="validation-item invalid">';
-                html += '<span class="validation-icon">❌</span>';
-                html += `<span>Nombre total de matchs : ${totalMatchsJoues}/${totalMatchsAttendu} (${totalMatchsAttendu - totalMatchsJoues} matchs manquants)</span>`;
-                html += '</div>';
-                toutValide = false;
-            }
-            
-            // Vérifier pour chaque équipe
-            html += '<h2>Validation par Équipe</h2>';
-            
-            let equipesValides = 0;
-            let detailsEquipes = [];
-            
-            for (let equipe = 1; equipe <= CONFIG.nbEquipes; equipe++) {
-                const matchsEquipe = getMatchsEquipe(equipe);
-                const matchsParJour = [0, 0, 0];
-                
-                matchsEquipe.forEach(match => {
-                    if (match.jour === 'Jeudi') matchsParJour[0]++;
-                    else if (match.jour === 'Vendredi') matchsParJour[1]++;
-                    else if (match.jour === 'Samedi') matchsParJour[2]++;
-                });
-                
-                const totalMatchs = matchsEquipe.length;
-                
-                // Flexibilité pour le samedi
-                const repartitionCorrecte = 
-                    matchsParJour[0] <= 6 && // Max 6 jeudi
-                    matchsParJour[1] <= 6 && // Max 6 vendredi
-                    matchsParJour[2] >= 4 && // Min 4 samedi
-                    totalMatchs === 16; // Total correct
-                
-                // Vérifier les adversaires
-                const adversaires = new Set(matchsEquipe.map(m => m.adversaire));
-                const tousAdversaires = adversaires.size === 16;
-                
-                const equipeValide = totalMatchs === 16 && tousAdversaires;
-                if (equipeValide) equipesValides++;
-                
-                detailsEquipes.push({
-                    equipe: equipe,
-                    valide: equipeValide,
-                    totalMatchs: totalMatchs,
-                    matchsParJour: matchsParJour,
-                    adversaires: adversaires.size
-                });
-            }
-            
-            // Résumé des équipes
-            if (equipesValides === CONFIG.nbEquipes) {
-                html += '<div class="validation-item valid">';
-                html += '<span class="validation-icon">✅</span>';
-                html += `<span>Toutes les équipes (${equipesValides}/${CONFIG.nbEquipes}) ont leur planning complet</span>`;
-                html += '</div>';
-            } else {
-                html += '<div class="validation-item invalid">';
-                html += '<span class="validation-icon">❌</span>';
-                html += `<span>Seulement ${equipesValides}/${CONFIG.nbEquipes} équipes ont leur planning complet</span>`;
-                html += '</div>';
-                toutValide = false;
-            }
-            
-            // Détails par équipe
-            html += '<details style="margin-top: 20px;">';
-            html += '<summary style="cursor: pointer; font-weight: bold;">Voir le détail par équipe</summary>';
-            html += '<div style="margin-top: 10px;">';
-            
-            detailsEquipes.forEach(detail => {
-                if (detail.valide) {
-                    html += '<div class="validation-item valid">';
-                    html += '<span class="validation-icon">✅</span>';
-                    html += `<span>${getNomEquipe(detail.equipe)} : ${detail.totalMatchs} matchs (${detail.matchsParJour.join('+')}), ${detail.adversaires} adversaires</span>`;
-                    html += '</div>';
-                } else {
-                    html += '<div class="validation-item invalid">';
-                    html += '<span class="validation-icon">❌</span>';
-                    html += `<span>${getNomEquipe(detail.equipe)} : ${detail.totalMatchs}/16 matchs (${detail.matchsParJour.join('+')}), ${detail.adversaires}/16 adversaires</span>`;
-                    html += '</div>';
-                }
-            });
-            
-            html += '</div></details>';
-            
-            // Vérifier les matchs consécutifs (avec tolérance pour samedi)
-            html += '<h2>Validation des Temps de Repos</h2>';
-            let violationsRepos = [];
-            
-            for (let equipe = 1; equipe <= CONFIG.nbEquipes; equipe++) {
-                for (let jourIdx = 0; jourIdx < planning.length; jourIdx++) {
-                    let dernierCreneau = -2;
-                    
-                    planning[jourIdx].forEach((creneau, creneauIdx) => {
-                        creneau.terrains.forEach(terrain => {
-                            if (terrain && (terrain.equipe1 === equipe || terrain.equipe2 === equipe)) {
-                                if (creneauIdx - dernierCreneau === 1) {
-                                    // Tolérance pour le samedi
-                                    if (jourIdx !== 2) {
-                                        violationsRepos.push({
-                                            equipe: equipe,
-                                            jour: CONFIG.jours[jourIdx].nom,
-                                            creneaux: [dernierCreneau, creneauIdx]
-                                        });
-                                    }
-                                }
-                                dernierCreneau = creneauIdx;
-                            }
-                        });
-                    });
-                }
-            }
-            
-            if (violationsRepos.length === 0) {
-                html += '<div class="validation-item valid">';
-                html += '<span class="validation-icon">✅</span>';
-                html += '<span>Temps de repos respectés (tolérance accordée le samedi)</span>';
-                html += '</div>';
-            } else {
-                html += '<div class="validation-item invalid">';
-                html += '<span class="validation-icon">❌</span>';
-                html += `<span>${violationsRepos.length} violation(s) du temps de repos détectée(s)</span>`;
-                html += '</div>';
-                
-                html += '<details>';
-                html += '<summary style="cursor: pointer;">Voir les violations</summary>';
-                violationsRepos.forEach(v => {
-                    html += `<p>• ${getNomEquipe(v.equipe)} le ${v.jour} (créneaux ${v.creneaux[0]+1} et ${v.creneaux[1]+1})</p>`;
-                });
-                html += '</details>';
-                
-                toutValide = false;
-            }
-            
-            // Résumé final
-            if (toutValide) {
-                html = '<div class="success-message">🎉 Le planning est parfait ! Toutes les contraintes sont respectées.</div>' + html;
-            } else {
-                html = '<div class="error-message">⚠️ Le planning nécessite des ajustements. Vérifiez la section "Finalisation".</div>' + html;
-            }
-            
-            document.getElementById('validation-content').innerHTML = html;
-        }
-
-        // Initialiser le sélecteur d'équipe
         function initTeamSelector() {
             const select = document.getElementById('team-select');
             select.innerHTML = '<option value="">-- Choisir une équipe --</option>';
-            for (let i = 1; i <= CONFIG.nbEquipes; i++) {
+            
+            for (let i = 1; i <= 17; i++) {
                 const option = document.createElement('option');
                 option.value = i;
                 option.textContent = getNomEquipe(i);
@@ -1797,20 +624,38 @@
             }
         }
 
-        // Mettre à jour la section "Mon Équipe" avec arbitrage
+        function getArbitragesEquipe(numeroEquipe) {
+            const arbitrages = [];
+            
+            ARBITRAGE_DATA.forEach((jour, jourIdx) => {
+                const nomJour = JOURS[jourIdx];
+                
+                jour.forEach(creneau => {
+                    if (creneau.arbitres.includes(numeroEquipe)) {
+                        arbitrages.push({
+                            jour: nomJour,
+                            heure: creneau.heure
+                        });
+                    }
+                });
+            });
+            
+            return arbitrages;
+        }
+
         function updateMonEquipe() {
             const select = document.getElementById('team-select');
             const equipe = parseInt(select.value);
             
             if (!equipe) {
-                document.getElementById('mon-equipe-content').innerHTML = '<p>Veuillez sélectionner une équipe.</p>';
+                document.getElementById('mon-equipe-content').innerHTML = '<p style="text-align: center; color: #666; font-size: 1.1em; margin-top: 40px;">Veuillez sélectionner votre équipe pour voir votre planning.</p>';
                 return;
             }
             
             const matchsEquipe = getMatchsEquipe(equipe);
             const arbitragesEquipe = getArbitragesEquipe(equipe);
             
-            let html = `<h2>Planning de ${getNomEquipe(equipe)}</h2>`;
+            let html = `<h2 style="text-align: center; margin: 30px 0;">${getNomEquipe(equipe)}</h2>`;
             
             // Stats
             const matchsParJour = [0, 0, 0];
@@ -1821,157 +666,148 @@
             });
             
             html += '<div class="stats-grid">';
-            html += `<div class="stat-card"><div class="stat-label">Total Matchs</div><div class="stat-value">${matchsEquipe.length}/16</div></div>`;
+            html += `<div class="stat-card"><div class="stat-label">Total matchs</div><div class="stat-value">${matchsEquipe.length}</div></div>`;
             html += `<div class="stat-card"><div class="stat-label">Arbitrages</div><div class="stat-value">${arbitragesEquipe.length}</div></div>`;
-            html += `<div class="stat-card"><div class="stat-label">Jeudi</div><div class="stat-value">${matchsParJour[0]}/6</div></div>`;
-            html += `<div class="stat-card"><div class="stat-label">Vendredi</div><div class="stat-value">${matchsParJour[1]}/6</div></div>`;
-            html += `<div class="stat-card"><div class="stat-label">Samedi</div><div class="stat-value">${matchsParJour[2]}/4+</div></div>`;
+            html += `<div class="stat-card"><div class="stat-label">Jeudi</div><div class="stat-value">${matchsParJour[0]}</div></div>`;
+            html += `<div class="stat-card"><div class="stat-label">Vendredi</div><div class="stat-value">${matchsParJour[1]}</div></div>`;
+            html += `<div class="stat-card"><div class="stat-label">Samedi</div><div class="stat-value">${matchsParJour[2]}</div></div>`;
             html += '</div>';
             
-            if (matchsEquipe.length === 0 && arbitragesEquipe.length === 0) {
-                html += '<div class="error-message">Aucun match ni arbitrage programmé pour cette équipe.</div>';
-            } else {
-                // Planning unifié par jour
-                for (let jourIdx = 0; jourIdx < CONFIG.jours.length; jourIdx++) {
-                    const jour = CONFIG.jours[jourIdx].nom;
-                    
-                    // Collecter matchs et arbitrages pour ce jour
-                    const activitesJour = [];
-                    
-                    // Ajouter les matchs
-                    matchsEquipe.forEach(match => {
-                        if (match.jour === jour) {
-                            activitesJour.push({
-                                type: 'match',
-                                heure: match.heure,
-                                details: `vs ${getNomEquipe(match.adversaire)} (T${match.terrain})`
-                            });
-                        }
-                    });
-                    
-                    // Ajouter les arbitrages
-                    arbitragesEquipe.forEach(arbitrage => {
-                        if (arbitrage.jour === jour) {
-                            activitesJour.push({
-                                type: 'arbitrage',
-                                heure: arbitrage.heure,
-                                details: 'Arbitrage'
-                            });
-                        }
-                    });
-                    
-                    // Trier par heure
-                    activitesJour.sort((a, b) => a.heure.localeCompare(b.heure));
-                    
-                    if (activitesJour.length > 0) {
-                        html += `<h3>${jour}</h3>`;
-                        html += '<table>';
-                        html += '<thead><tr><th>Heure</th><th>Activité</th><th>Détails</th></tr></thead>';
-                        html += '<tbody>';
-                        
-                        activitesJour.forEach(activite => {
-                            const classeCSS = activite.type === 'arbitrage' ? 'arbitrage-row' : '';
-                            const icone = activite.type === 'arbitrage' ? '👨‍⚖️' : '⚽';
-                            
-                            html += `<tr class="${classeCSS}">`;
-                            html += `<td><strong>${activite.heure}</strong></td>`;
-                            html += `<td>${icone} ${activite.type === 'arbitrage' ? 'Arbitrage' : 'Match'}</td>`;
-                            html += `<td style="font-size: 0.85em;">${activite.details}</td>`;
-                            html += '</tr>';
-                        });
-                        
-                        html += '</tbody></table>';
-                    }
-                }
+            // Planning unifié par jour
+            JOURS.forEach((jour, jourIdx) => {
+                const activitesJour = [];
                 
-                // Adversaires manquants (pour les matchs)
-                if (matchsEquipe.length > 0) {
-                    const adversairesJoues = new Set(matchsEquipe.map(m => m.adversaire));
-                    const adversairesManquants = [];
-                    for (let i = 1; i <= CONFIG.nbEquipes; i++) {
-                        if (i !== equipe && !adversairesJoues.has(i)) {
-                            adversairesManquants.push(i);
-                        }
+                // Ajouter les matchs
+                matchsEquipe.forEach(match => {
+                    if (match.jour === jour) {
+                        activitesJour.push({
+                            type: 'match',
+                            heure: match.heure,
+                            details: `<strong>vs ${getNomEquipe(match.adversaire)}</strong> (Terrain ${match.terrain})`
+                        });
                     }
+                });
+                
+                // Ajouter les arbitrages
+                arbitragesEquipe.forEach(arbitrage => {
+                    if (arbitrage.jour === jour) {
+                        activitesJour.push({
+                            type: 'arbitrage',
+                            heure: arbitrage.heure,
+                            details: 'Arbitrage'
+                        });
+                    }
+                });
+                
+                // Trier par heure
+                activitesJour.sort((a, b) => a.heure.localeCompare(b.heure));
+                
+                if (activitesJour.length > 0) {
+                    html += `<h3>${jour} (${activitesJour.length} activités)</h3>`;
+                    html += '<table><thead><tr><th>Heure</th><th>Type</th><th>Détails</th></tr></thead><tbody>';
                     
-                    if (adversairesManquants.length > 0) {
-                        html += '<div class="error-message">';
-                        html += `<strong>Adversaires manquants (${adversairesManquants.length}) :</strong><br>`;
-                        html += adversairesManquants.map(a => getNomEquipe(a)).join(', ');
-                        html += '</div>';
-                    }
+                    activitesJour.forEach(activite => {
+                        const classeCSS = activite.type === 'arbitrage' ? 'arbitrage-row' : '';
+                        const typeTexte = activite.type === 'arbitrage' ? '⚖️ Arbitrage' : '⚽ Match';
+                        
+                        html += `<tr class="${classeCSS}">`;
+                        html += `<td><strong>${activite.heure}</strong></td>`;
+                        html += `<td>${typeTexte}</td>`;
+                        html += `<td>${activite.details}</td>`;
+                        html += '</tr>';
+                    });
+                    
+                    html += '</tbody></table>';
                 }
-            }
+            });
             
             document.getElementById('mon-equipe-content').innerHTML = html;
         }
 
-        // Afficher une section
+        function afficherArbitrage() {
+            // Stats d'arbitrage
+            let statsArbitrage = {};
+            for (let i = 1; i <= 17; i++) {
+                statsArbitrage[i] = 0;
+            }
+            
+            ARBITRAGE_DATA.forEach(jour => {
+                jour.forEach(creneau => {
+                    creneau.arbitres.forEach(arbitre => {
+                        statsArbitrage[arbitre]++;
+                    });
+                });
+            });
+            
+            const total = Object.values(statsArbitrage).reduce((a, b) => a + b, 0);
+            const moyenne = total / 17;
+            
+            let html = '<h2>Statistiques d\'arbitrage</h2>';
+            html += '<div class="stats-grid">';
+            html += `<div class="stat-card"><div class="stat-label">Total arbitrages</div><div class="stat-value">${total}</div></div>`;
+            html += `<div class="stat-card"><div class="stat-label">Moyenne par équipe</div><div class="stat-value">${moyenne.toFixed(1)}</div></div>`;
+            html += '</div>';
+            
+            // Planning d'arbitrage par jour
+            ARBITRAGE_DATA.forEach((jour, jourIdx) => {
+                const nomJour = JOURS[jourIdx];
+                const planningJour = PLANNING_DATA[jourIdx];
+                
+                html += `<h2>${nomJour} - Arbitrage</h2>`;
+                html += '<table><thead><tr><th>Heure</th><th>Terrain 1</th><th>Terrain 2</th><th>Terrain 3</th><th>Arbitres</th></tr></thead><tbody>';
+                
+                jour.forEach((creneauArbitrage, idx) => {
+                    const creneauPlanning = planningJour[idx];
+                    
+                    html += '<tr>';
+                    html += `<td><strong>${creneauArbitrage.heure}</strong></td>`;
+                    
+                    // Afficher les matchs
+                    for (let i = 0; i < 3; i++) {
+                        const terrain = creneauPlanning.terrains[i];
+                        if (terrain) {
+                            html += `<td style="font-size: 0.85em;">${getNomEquipe(terrain.equipe1)} vs ${getNomEquipe(terrain.equipe2)}</td>`;
+                        } else {
+                            html += '<td style="color: #999;">-</td>';
+                        }
+                    }
+                    
+                    // Afficher les arbitres
+                    if (creneauArbitrage.arbitres.length > 0) {
+                        const nomsArbitres = creneauArbitrage.arbitres.map(a => getNomEquipe(a)).join('<br>');
+                        html += `<td class="arbitre-cell" style="font-size: 0.85em;">${nomsArbitres}</td>`;
+                    } else {
+                        html += '<td style="color: #999;">-</td>';
+                    }
+                    
+                    html += '</tr>';
+                });
+                
+                html += '</tbody></table>';
+            });
+            
+            document.getElementById('arbitrage-content').innerHTML = html;
+        }
+
         function showSection(sectionId) {
-            // Masquer toutes les sections
             document.querySelectorAll('.section').forEach(section => {
                 section.classList.remove('active');
             });
             
-            // Afficher la section sélectionnée
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Mettre à jour la navigation
             document.querySelectorAll('nav button').forEach(button => {
                 button.classList.remove('active');
             });
             
-            // Charger le contenu spécifique
-            if (sectionId === 'finalisation') {
-                afficherFinalisation();
-            }
-            
-            // Trouver le bouton actif
-            const buttons = document.querySelectorAll('nav button');
-            buttons.forEach(button => {
-                if (button.onclick && button.onclick.toString().includes(sectionId)) {
-                    button.classList.add('active');
-                }
-            });
-        }
-
-        // Régénérer le planning
-        function regenererPlanning() {
-            if (verifierVerrouillage()) {
-                alert('🔒 Le planning est verrouillé !');
-                return;
-            }
-
-            console.log("Régénération du planning...");
-            genererPlanning();
-            afficherTousLesMatchs();
-            afficherPlanningParJour();
-            afficherPlanningParEquipe();
-            afficherFinalisation();
-            validerPlanning();
-            
-            // Réinitialiser l'arbitrage
-            arbitrage = [[], [], []];
-            document.getElementById('arbitrage-content').innerHTML = '<p>Veuillez générer l\'arbitrage après avoir finalisé le planning.</p>';
-            
-            // Réinitialiser la sélection d'équipe
-            document.getElementById('team-select').value = '';
-            document.getElementById('mon-equipe-content').innerHTML = '<p>Veuillez sélectionner une équipe.</p>';
-            
-            // Message de confirmation
-            alert('✅ Planning régénéré !');
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
         }
 
         // Initialisation
         window.onload = function() {
-            genererPlanning();
             initTeamSelector();
-            afficherTousLesMatchs();
             afficherPlanningParJour();
             afficherPlanningParEquipe();
-            afficherFinalisation();
-            validerPlanning();
-            mettreAJourBoutons();
+            afficherArbitrage();
         };
     </script>
 </body>
