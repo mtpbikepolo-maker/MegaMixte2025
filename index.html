@@ -139,6 +139,26 @@
             background: #f8f9ff;
         }
         
+        /* Terrain avec arbitre */
+        .terrain-cell {
+            position: relative;
+        }
+        
+        .match-info {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .arbitre-info {
+            font-size: 0.85em;
+            color: #2d5f2d;
+            background: #e8f5e8;
+            padding: 4px 8px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
         /* Sélecteur d'équipe */
         .team-selector {
             margin: 30px 0;
@@ -248,6 +268,10 @@
             select {
                 min-width: 250px;
             }
+            
+            .arbitre-info {
+                font-size: 0.8em;
+            }
         }
         
         @media (max-width: 480px) {
@@ -266,6 +290,11 @@
             
             th, td {
                 padding: 8px 6px;
+            }
+            
+            .arbitre-info {
+                font-size: 0.75em;
+                padding: 2px 4px;
             }
         }
     </style>
@@ -381,6 +410,7 @@
                 <strong>Règles d'arbitrage :</strong><br>
                 • Les équipes qui ne jouent pas arbitrent les matchs en cours<br>
                 • Chaque équipe arbitre environ 7 matchs sur l'ensemble du tournoi<br>
+                • L'arbitrage se fait par terrain (1 arbitre par terrain)<br>
                 • L'arbitrage se fait par séquences pour optimiser l'organisation
             </div>
             <div id="arbitrage-content"></div>
@@ -537,17 +567,28 @@
                 html += `<h2>${nomJour} - ${matchsJour} matchs</h2>`;
                 html += '<table><thead><tr><th>Heure</th><th>Terrain 1</th><th>Terrain 2</th><th>Terrain 3</th></tr></thead><tbody>';
                 
-                jour.forEach(creneau => {
+                jour.forEach((creneau, creneauIdx) => {
+                    const arbitrageCreneaux = ARBITRAGE_DATA[jourIdx][creneauIdx];
+                    
                     html += '<tr>';
                     html += `<td><strong>${creneau.heure}</strong></td>`;
                     
                     for (let i = 0; i < 3; i++) {
                         const terrain = creneau.terrains[i];
+                        html += '<td class="terrain-cell">';
+                        
                         if (terrain) {
-                            html += `<td>${getNomEquipe(terrain.equipe1)}<br><strong>vs</strong><br>${getNomEquipe(terrain.equipe2)}</td>`;
+                            html += `<div class="match-info">${getNomEquipe(terrain.equipe1)}<br><strong>vs</strong><br>${getNomEquipe(terrain.equipe2)}</div>`;
+                            
+                            // Ajouter l'arbitre correspondant au terrain
+                            if (arbitrageCreneaux && arbitrageCreneaux.arbitres[i]) {
+                                html += `<div class="arbitre-info">⚖️ ${getNomEquipe(arbitrageCreneaux.arbitres[i])}</div>`;
+                            }
                         } else {
-                            html += '<td style="color: #999; text-align: center;">-</td>';
+                            html += '<div style="color: #999; text-align: center;">-</div>';
                         }
+                        
+                        html += '</td>';
                     }
                     
                     html += '</tr>';
@@ -631,10 +672,12 @@
                 const nomJour = JOURS[jourIdx];
                 
                 jour.forEach(creneau => {
-                    if (creneau.arbitres.includes(numeroEquipe)) {
+                    const terrainArbitre = creneau.arbitres.indexOf(numeroEquipe);
+                    if (terrainArbitre !== -1) {
                         arbitrages.push({
                             jour: nomJour,
-                            heure: creneau.heure
+                            heure: creneau.heure,
+                            terrain: terrainArbitre + 1
                         });
                     }
                 });
@@ -694,7 +737,7 @@
                         activitesJour.push({
                             type: 'arbitrage',
                             heure: arbitrage.heure,
-                            details: 'Arbitrage'
+                            details: `Arbitrage (Terrain ${arbitrage.terrain})`
                         });
                     }
                 });
@@ -748,13 +791,29 @@
             html += `<div class="stat-card"><div class="stat-label">Moyenne par équipe</div><div class="stat-value">${moyenne.toFixed(1)}</div></div>`;
             html += '</div>';
             
-            // Planning d'arbitrage par jour
+            // Tableau de répartition des arbitrages par équipe
+            html += '<h3>Répartition par équipe</h3>';
+            html += '<table><thead><tr><th>Équipe</th><th>Nombre d\'arbitrages</th><th>Terrains arbitrés</th></tr></thead><tbody>';
+            
+            for (let equipe = 1; equipe <= 17; equipe++) {
+                const arbitragesEquipe = getArbitragesEquipe(equipe);
+                const terrainsArbitres = [...new Set(arbitragesEquipe.map(a => a.terrain))].sort();
+                
+                html += '<tr>';
+                html += `<td>${getNomEquipe(equipe)}</td>`;
+                html += `<td><strong>${statsArbitrage[equipe]}</strong></td>`;
+                html += `<td>Terrain${terrainsArbitres.length > 1 ? 's' : ''} ${terrainsArbitres.join(', ')}</td>`;
+                html += '</tr>';
+            }
+            html += '</tbody></table>';
+            
+            // Planning d'arbitrage par jour avec terrains
             ARBITRAGE_DATA.forEach((jour, jourIdx) => {
                 const nomJour = JOURS[jourIdx];
                 const planningJour = PLANNING_DATA[jourIdx];
                 
-                html += `<h2>${nomJour} - Arbitrage</h2>`;
-                html += '<table><thead><tr><th>Heure</th><th>Terrain 1</th><th>Terrain 2</th><th>Terrain 3</th><th>Arbitres</th></tr></thead><tbody>';
+                html += `<h2>${nomJour} - Planning d'arbitrage par terrain</h2>`;
+                html += '<table><thead><tr><th>Heure</th><th>Terrain 1</th><th>Terrain 2</th><th>Terrain 3</th></tr></thead><tbody>';
                 
                 jour.forEach((creneauArbitrage, idx) => {
                     const creneauPlanning = planningJour[idx];
@@ -762,22 +821,27 @@
                     html += '<tr>';
                     html += `<td><strong>${creneauArbitrage.heure}</strong></td>`;
                     
-                    // Afficher les matchs
+                    // Afficher match + arbitre pour chaque terrain
                     for (let i = 0; i < 3; i++) {
                         const terrain = creneauPlanning.terrains[i];
+                        html += '<td class="terrain-cell">';
+                        
                         if (terrain) {
-                            html += `<td style="font-size: 0.85em;">${getNomEquipe(terrain.equipe1)} vs ${getNomEquipe(terrain.equipe2)}</td>`;
+                            html += `<div class="match-info" style="font-size: 0.85em; margin-bottom: 8px;">`;
+                            html += `${getNomEquipe(terrain.equipe1)}<br>vs<br>${getNomEquipe(terrain.equipe2)}`;
+                            html += `</div>`;
+                            
+                            // Arbitre pour ce terrain
+                            if (creneauArbitrage.arbitres[i]) {
+                                html += `<div class="arbitre-info">⚖️ ${getNomEquipe(creneauArbitrage.arbitres[i])}</div>`;
+                            } else {
+                                html += `<div style="color: #999; font-size: 0.8em;">Pas d'arbitre</div>`;
+                            }
                         } else {
-                            html += '<td style="color: #999;">-</td>';
+                            html += '<div style="color: #999; text-align: center;">-</div>';
                         }
-                    }
-                    
-                    // Afficher les arbitres
-                    if (creneauArbitrage.arbitres.length > 0) {
-                        const nomsArbitres = creneauArbitrage.arbitres.map(a => getNomEquipe(a)).join('<br>');
-                        html += `<td class="arbitre-cell" style="font-size: 0.85em;">${nomsArbitres}</td>`;
-                    } else {
-                        html += '<td style="color: #999;">-</td>';
+                        
+                        html += '</td>';
                     }
                     
                     html += '</tr>';
